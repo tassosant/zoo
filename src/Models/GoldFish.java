@@ -1,13 +1,12 @@
 package Models;
 
-import Interfaces.IDive;
-import Interfaces.ISwim;
+import InterfacesAndEnums.Homotaxy;
 
-public class GoldFish extends Animal{
+public class GoldFish extends Fish {
 
 
     public GoldFish(String nickname){
-        super(1.0,25,Homotaxy.Fish, nickname);
+        super(1.0,25, Homotaxy.Fish, nickname);
     }
 
     @Override
@@ -16,8 +15,8 @@ public class GoldFish extends Animal{
     }
 
 
-    @Override
-    public void feed() {
-        System.out.println("Eats brine shrimp!");
-    }
+//    @Override
+//    public void feed() {
+//        System.out.println("Eats brine shrimp!");
+//    }
 }

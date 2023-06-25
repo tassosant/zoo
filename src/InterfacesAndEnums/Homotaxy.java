@@ -1,4 +1,4 @@
-package Models;
+package InterfacesAndEnums;
 
 public enum Homotaxy {
     Mammals,

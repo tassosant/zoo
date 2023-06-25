@@ -1,12 +1,12 @@
 package Models;
 
-import Interfaces.ISwim;
+import InterfacesAndEnums.Homotaxy;
 
-public class Whale extends Animal{
+public class Whale extends Mammal{
 
 
     public Whale(String nickname){
-        super(10000.0,80,Homotaxy.Mammals, nickname);
+        super(10000.0,80, Homotaxy.Mammals, nickname);
     }
 
     @Override
@@ -17,8 +17,8 @@ public class Whale extends Animal{
 
 
 
-    @Override
-    public void feed() {
-        System.out.println("Small fish!");
-    }
+//    @Override
+//    public void feed() {
+//        System.out.println("Small fish!");
+//    }
 }

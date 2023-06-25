@@ -1,15 +1,14 @@
 package Models;
 
-import Interfaces.IJump;
-import Interfaces.IRun;
-import Interfaces.IWalk;
+import InterfacesAndEnums.Homotaxy;
 
-public class Ape extends Animal {
+public class Ape extends Mammal {
 
     public Ape(String nickname) {
-        super(200,40,Homotaxy.Mammals, nickname);
-
+        super(200,40, Homotaxy.Mammals, nickname);
     }
+
+
 
     @Override
     public void move() {
@@ -18,8 +17,5 @@ public class Ape extends Animal {
         jump();
     }
 
-    @Override
-    public void feed() {
-        System.out.println("Eats fruits!");
-    }
+
 }

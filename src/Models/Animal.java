@@ -1,12 +1,11 @@
 package Models;
 
-import Interfaces.*;
+import InterfacesAndEnums.*;
 
 import java.io.Serializable;
 
-import static Controllers.ZooController.Ids;
-
 public abstract class Animal implements ICrawl, IDive, IFeed, IFly, IJump, IMove, IRun, ISwim, IWalk, Serializable {
+
 
     private double avgWeight;
     private int avgMaxAge;
@@ -22,34 +21,34 @@ public abstract class Animal implements ICrawl, IDive, IFeed, IFly, IJump, IMove
         this.avgMaxAge = avgMaxAge;
         this.homotaxy = homotaxy;
         this.nickname = nickname;
-        this.Id = Ids.get(Ids.size()-1); //get last increment id
+        //this.Id = Ids.get(Ids.size() - 1); //get last increment id
     }
 
-    public void crawl(){
+    public void crawl() {
         System.out.print("Crawl");
     }
 
-    public void dive(){
+    public void dive() {
         System.out.print("Dive");
     }
 
-    public void fly(){
+    public void fly() {
         System.out.print("Fly");
     }
 
-    public void jump(){
+    public void jump() {
         System.out.print("Jump");
     }
 
-    public void run(){
+    public void run() {
         System.out.print("Run");
     }
 
-    public void swim(){
+    public void swim() {
         System.out.println("Swim");
     }
 
-    public void walk(){
+    public void walk() {
         System.out.println("Walk");
     }
 
@@ -72,4 +71,13 @@ public abstract class Animal implements ICrawl, IDive, IFeed, IFly, IJump, IMove
     public int getId() {
         return Id;
     }
+
+    public void feed(){
+        System.out.println(this.nickname+"has just ate!");
+    }
+
+    //feed(){
+    //System.out.println(getinstanceofobject+"is eating");
+    //all animals have eaten
+    //}
 }

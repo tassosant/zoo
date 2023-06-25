@@ -1,8 +1,8 @@
 package Models;
 
-import Interfaces.IWalk;
+import InterfacesAndEnums.Homotaxy;
 
-public class Lion extends Animal {
+public class Lion extends Mammal {
 
     public Lion(String nickname){
         super(200.0,12, Homotaxy.Mammals, nickname);
@@ -16,8 +16,8 @@ public class Lion extends Animal {
 
 
 
-    @Override
-    public void feed() {
-        System.out.println("Eats other animals!");
-    }
+//    @Override
+//    public void feed() {
+//        System.out.println("Eats other animals!");
+//    }
 }

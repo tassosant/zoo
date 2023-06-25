@@ -1,7 +1,10 @@
 package Views;
 
 import java.sql.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Set;
 
 //we want to create a menu view for the user
 public class MenuView {
@@ -15,7 +18,7 @@ public class MenuView {
                     "6. Feed all animals",
                     "7. Exit"
             };
-    public int renderMenu(){
+    public static int renderMenu(){
 
         System.out.println("Please select a choice between 1 and " + (menu.length-1)+"!");
         for(String menuElement:menu){
@@ -25,8 +28,8 @@ public class MenuView {
         return scanner.nextInt();
     }
     //check if user type number which is off limits
-    public boolean validatedInput(int num){
-        if(num<1 || num>menu.length-1){
+    public static boolean validatedInput(int num){
+        if(num<1 || num>menu.length){
             return false;
         }
         return true;
@@ -35,4 +38,36 @@ public class MenuView {
     public static String[] getMenu() {
         return menu;
     }
+
+    public static Set<String> getAnimalCategories(HashMap<String,?> animalCategories){
+        Set<String> categories = animalCategories.keySet();
+        return categories;
+    }
+
+    public static void renderAnimalCategoriesMenu(Set<?> categories){
+        System.out.println("Please choose one of the following categories!");
+        int index = 1;
+        for (Object category : categories){
+            System.out.println(String.valueOf(index)+"."+category);
+            index++;
+        }
+
+
+
+    }
+
+    public static ArrayList<String> getAnimalsByCategory(HashMap<String,ArrayList<String>> animalCategories, String category){
+        return animalCategories.get(category);
+    }
+
+    public static void renderAnimalsByCategoryMenu(ArrayList<String> animals){
+        System.out.println("Please choose one of the following animals!");
+        int index = 1;
+        for (String animal : animals){
+            System.out.println(String.valueOf(index)+"."+animal);
+            index++;
+        }
+    }
+
+
 }

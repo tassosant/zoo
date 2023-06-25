@@ -8,15 +8,39 @@
 //invertebrates abstract?
 
 
+import Controllers.ClassesController;
+import Controllers.ZooController;
 import Models.*;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.net.URL;
 import java.util.ArrayList;
-
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) {
+
+
+
+    public static void main(String[] args) throws IOException {
+
+        ZooController zooController = new ZooController();
+        zooController.handleMenu();
+
+
+
+
+
+
+
+
+    }
+
+
 //        Animal whale = new Whale();
 //        //whale.move();
 //        Animal monkey = new Monkey();
@@ -31,40 +55,40 @@ public class Main {
 //        saveAnimalsToFile(animals);
 //        ArrayList<Animal> animalsFromFile = readAnimalsFromFile();
 //        printAnimalList(animalsFromFile);
-    }
 
-    public static void saveAnimalsToFile(ArrayList<Animal> animals){
-        try (FileOutputStream fos = new FileOutputStream("animalsData");
-             ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 
-            oos.writeObject(animals);
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found : "+ e);
-            throw new RuntimeException(e);
-        } catch (IOException ioe) {
-
-            System.out.println("Error while writing data : "+ ioe);
-
-            ioe.printStackTrace();
-        }
-
-    }
-    public static ArrayList<Animal> readAnimalsFromFile(){
-        ArrayList<Animal> animals =new ArrayList<Animal>();
-        try (FileInputStream fis = new FileInputStream("animalsData");
-             ObjectInputStream ois = new ObjectInputStream(fis);) {
-
-            animals = (ArrayList) ois.readObject();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } catch (ClassNotFoundException c) {
-            System.out.println("Class not found");
-            c.printStackTrace();
-        }
-
-        return animals;
-    }
+//    public static void saveAnimalsToFile(ArrayList<Animal> animals){
+//        try (FileOutputStream fos = new FileOutputStream("animalsData");
+//             ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+//
+//            oos.writeObject(animals);
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found : "+ e);
+//            throw new RuntimeException(e);
+//        } catch (IOException ioe) {
+//
+//            System.out.println("Error while writing data : "+ ioe);
+//
+//            ioe.printStackTrace();
+//        }
+//
+//    }
+//    public static ArrayList<Animal> readAnimalsFromFile(){
+//        ArrayList<Animal> animals =new ArrayList<Animal>();
+//        try (FileInputStream fis = new FileInputStream("animalsData");
+//             ObjectInputStream ois = new ObjectInputStream(fis);) {
+//
+//            animals = (ArrayList) ois.readObject();
+//        } catch (IOException ioe) {
+//            ioe.printStackTrace();
+//        } catch (ClassNotFoundException c) {
+//            System.out.println("Class not found");
+//            c.printStackTrace();
+//        }
+//
+//        return animals;
+//    }
 
     public static void printAnimalList(ArrayList<Animal> animals){
         //foreach loop to read animal
@@ -76,5 +100,17 @@ public class Main {
         System.out.println("Printing animal "+animal.getClass().getSimpleName());
 
     }
+
+
+
+
+//    public static boolean isAbstractClass(String filePath) throws IOException {
+//        return searchFile(filePath, "abstract class");
+//    }
+
+
+
+
+
 }
 

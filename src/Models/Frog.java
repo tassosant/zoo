@@ -1,9 +1,8 @@
 package Models;
 
-import Interfaces.IJump;
-import Interfaces.ISwim;
+import InterfacesAndEnums.Homotaxy;
 
-public class Frog extends Animal{
+public class Frog extends Amphibian{
 
     public Frog(String nickname){
         super(0.043,8, Homotaxy.Amphibians, nickname);
@@ -18,8 +17,4 @@ public class Frog extends Animal{
 
 
 
-    @Override
-    public void feed() {
-        System.out.println("Eats insects!");
-    }
 }

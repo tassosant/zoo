@@ -1,15 +1,19 @@
 package Models;
 
-public class Snake extends Animal{
+import InterfacesAndEnums.Homotaxy;
 
-    public  Snake(String nickname){
-        super(2.0,15,Homotaxy.Reptiles, nickname);
-    }
+public class Snake extends Reptile{
 
-    @Override
-    public void feed() {
-        System.out.println("Eats smaller animals!");
+    public Snake(String nickname){
+        super(2.0,15, Homotaxy.Reptiles, nickname);
     }
+    public Snake(){
+        super(2.0,15,Homotaxy.Reptiles, "tasos");
+    }
+//    @Override
+//    public void feed() {
+//        System.out.println("Eats smaller animals!");
+//    }
 
     @Override
     public void move() {

@@ -1,9 +1,8 @@
 package Models;
 
-import Interfaces.IFly;
-import Interfaces.IWalk;
+import InterfacesAndEnums.Homotaxy;
 
-public class Eagle extends Animal {
+public class Eagle extends Bird {
 
 
     public Eagle(String nickname) {
@@ -16,8 +15,5 @@ public class Eagle extends Animal {
         fly();
     }
 
-    @Override
-    public void feed() {
-        System.out.println("Eats small animals!");
-    }
+
 }

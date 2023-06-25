@@ -1,10 +1,10 @@
 package Models;
 
-import Interfaces.ISwim;
+import InterfacesAndEnums.Homotaxy;
 
-public class Salamander extends Animal  {
+public class Salamander extends Amphibian  {
     public Salamander(String nickname){
-        super(65.0,10,Homotaxy.Amphibians, nickname);
+        super(65.0,10, Homotaxy.Amphibians, nickname);
     }
     @Override
     public void move() {
@@ -13,8 +13,8 @@ public class Salamander extends Animal  {
         run();
     }
 
-    @Override
-    public void feed() {
-        System.out.println("Eats insects!");
-    }
+//    @Override
+//    public void feed() {
+//        System.out.println("Eats insects!");
+//    }
 }

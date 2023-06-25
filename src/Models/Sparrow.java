@@ -1,11 +1,11 @@
 package Models;
 
-import Interfaces.IFly;
+import InterfacesAndEnums.Homotaxy;
 
-public class Sparrow extends Animal{
+public class Sparrow extends Bird{
 
     public Sparrow(String nickname){
-        super(0.03,3,Homotaxy.Birds, nickname);
+        super(0.03,3, Homotaxy.Birds, nickname);
     }
 
     @Override
@@ -16,8 +16,8 @@ public class Sparrow extends Animal{
 
 
 
-    @Override
-    public void feed() {
-        System.out.println("Eats berries, insects!");
-    }
+//    @Override
+//    public void feed() {
+//        System.out.println("Eats berries, insects!");
+//    }
 }

@@ -1,4 +1,4 @@
-package Interfaces;
+package InterfacesAndEnums;
 
 public interface IFly {
     void fly();

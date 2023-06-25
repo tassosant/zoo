@@ -12,16 +12,20 @@ public class AnimalView {
         this.animals=animals;
     }
 
-    static void printColumns(){
-        //nickname
-        //category (name of class)
-        //age
-        //weight
-        //feed
-        //abilities
+    public void setAnimals(ArrayList<Animal> animals) {
+        this.animals = animals;
     }
 
-    static void PrintRow(Animal animal){
+    public void printColumns(){
+
+        System.out.printf("------------------------------%n");
+                        //nickname,homotaxy,age,weight,abilities
+        System.out.printf("| '%15s' | '%8s' | '%10s' | '10s%' | '%10s' | %n", "Nickname", "Homotaxy", "Age(years)", "Weight(kg)", "Abilities");
+
+        System.out.printf("------------------------------\n");
+    }
+
+    public void PrintRow(Animal animal){
         //
     }
 }
