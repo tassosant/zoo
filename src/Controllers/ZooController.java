@@ -148,6 +148,7 @@ public class ZooController {
         this.animals.add(animal);
         saveAnimalsToFile(animals);
         animalView.setAnimals(this.animals);
+        System.out.println("Animal added successfully");
     }
 
     private ArrayList<String> handleCategoriesChoice(){
@@ -234,6 +235,8 @@ public class ZooController {
         if(animalsFounded!=null){
             animalView.setAnimals(animalsFounded);
             animalView.printAnimals();
+        }else{
+            System.out.println("Animal(s) not found in the zoo!");
         }
     }
 
@@ -261,6 +264,8 @@ public class ZooController {
             System.out.println("Animal found");
             this.animalView.printColumns();
             this.animalView.printAnimal(animal);
+        }else{
+            System.out.println("Animal not found!");
         }
     }
 
@@ -296,6 +301,9 @@ public class ZooController {
         if(result==1){
             this.animalView.setAnimals(this.animals);
             saveAnimalsToFile(this.animals);
+            System.out.println("Animal deleted successfully!");
+        }else{
+            System.out.println("Animal does not exist!");
         }
 
     }
