@@ -17,8 +17,7 @@ Zoo management system.
 
 
 
-## Visuals
-![Image with one armor equipped and weapon equipped](https://github.com/tassosant/RPG_game/blob/main/HeroCreationWithEquippingArmorPIeceAndWeapon.png)
+
 
 ## Installation
 This app was created and tested in **intellij** using the **gradle** tool.
