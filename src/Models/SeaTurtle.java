@@ -4,7 +4,7 @@ import InterfacesAndEnums.Homotaxy;
 
 public class SeaTurtle extends Reptile{
     public SeaTurtle(String nickname){
-        super(450.0, 20, Homotaxy.Amphibians, nickname);
+        super(450.0, 20,  nickname);
     }
 //    @Override
 //    public void feed() {
@@ -12,8 +12,9 @@ public class SeaTurtle extends Reptile{
 //    }
 
     @Override
-    public void move() {
-        walk();
-        swim();
+    public String move() {
+        return super.move(walk(),swim());
+//        walk();
+//        swim();
     }
 }

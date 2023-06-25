@@ -1,5 +1,5 @@
 package InterfacesAndEnums;
 
 public interface IDive{
-    void dive();
+    String dive();
 }

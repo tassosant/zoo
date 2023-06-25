@@ -6,12 +6,13 @@ public class GoldFish extends Fish {
 
 
     public GoldFish(String nickname){
-        super(1.0,25, Homotaxy.Fish, nickname);
+        super(1.0,25,  nickname);
     }
 
-    @Override
-    public void move() {
-        swim();
+
+    public String move() {
+        return super.move(swim());
+        //swim();
     }
 
 

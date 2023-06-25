@@ -4,52 +4,64 @@ import InterfacesAndEnums.*;
 
 import java.io.Serializable;
 
+
+import static Controllers.ZooController.lastId;
+
 public abstract class Animal implements ICrawl, IDive, IFeed, IFly, IJump, IMove, IRun, ISwim, IWalk, Serializable {
 
 
     private double avgWeight;
     private int avgMaxAge;
 
-    private Homotaxy homotaxy;
+    //private Homotaxy homotaxy;
 
     private String nickname;
 
+    private String animalName;
+
+    private String homotaxy;
+
     private int Id;
 
-    public Animal(double avgWeight, int avgMaxAge, Homotaxy homotaxy, String nickname) {
+    public Animal(double avgWeight, int avgMaxAge, String nickname) {
         this.avgWeight = avgWeight;
         this.avgMaxAge = avgMaxAge;
-        this.homotaxy = homotaxy;
+        this.homotaxy = getClass().getSuperclass().getSimpleName();
         this.nickname = nickname;
-        //this.Id = Ids.get(Ids.size() - 1); //get last increment id
+        this.animalName = getClass().getSimpleName();
+        this.Id = lastId+1; //get last increment id
     }
 
-    public void crawl() {
-        System.out.print("Crawl");
+    public String getAnimalName() {
+        return animalName;
     }
 
-    public void dive() {
-        System.out.print("Dive");
+    public String crawl() {
+        return "Crawl";
     }
 
-    public void fly() {
-        System.out.print("Fly");
+    public String dive() {
+        return "Dive";
     }
 
-    public void jump() {
-        System.out.print("Jump");
+    public String fly() {
+        return "Fly";
     }
 
-    public void run() {
-        System.out.print("Run");
+    public String jump() {
+        return "Jump";
     }
 
-    public void swim() {
-        System.out.println("Swim");
+    public String run() {
+        return "Run";
     }
 
-    public void walk() {
-        System.out.println("Walk");
+    public String swim() {
+        return "Swim";
+    }
+
+    public String walk() {
+        return "Walk";
     }
 
     public double getAvgWeight() {
@@ -60,7 +72,7 @@ public abstract class Animal implements ICrawl, IDive, IFeed, IFly, IJump, IMove
         return avgMaxAge;
     }
 
-    public Homotaxy getHomotaxy() {
+    public String getHomotaxy() {
         return homotaxy;
     }
 
@@ -73,11 +85,18 @@ public abstract class Animal implements ICrawl, IDive, IFeed, IFly, IJump, IMove
     }
 
     public void feed(){
-        System.out.println(this.nickname+"has just ate!");
+        System.out.println(this.nickname+" has just ate!");
     }
-
+    protected String move(String... movements){
+        StringBuilder movementsToReturn = new StringBuilder();
+        for(String movement:movements){
+            movementsToReturn.append(movement).append(",");
+        }
+        return movementsToReturn.substring(0,movementsToReturn.length()-1);
+    }
     //feed(){
     //System.out.println(getinstanceofobject+"is eating");
     //all animals have eaten
     //}
+
 }

@@ -14,11 +14,15 @@ import java.util.HashMap;
 public class ClassesController {
 //    private static ArrayList<Animal> animals = new ArrayList<>();
 
+    private int maxLengthOfMovementsString;
 
+    //list of animals, pulled by files
     private static ArrayList<String> animals = new ArrayList<String>();
+
+    //list of homotaxies, pulled by abstract classes
     private static ArrayList<String> homotaxies = new ArrayList<String>();
     //key = animal category
-    //value = arraylist string animals
+    //value = arraylist string animals of specific category
     private HashMap<String, ArrayList<String>> animalCategories = new HashMap<>();
 
     public HashMap<String, ArrayList<String>> getAnimalCategories() {
@@ -30,6 +34,7 @@ public class ClassesController {
         findAllModels();
         addAllKeysToHashMap();
         addAllValuesToHashMap();
+        this.maxLengthOfMovementsString=0;
         //printHashMap();
     }
 
@@ -41,11 +46,12 @@ public class ClassesController {
     }
 
     private void addAllValuesToHashMap(){
-        for(String animal : animals){
+        for(String animal : this.animals){
             Animal tempAnimal = instantiateClassFromString(animal,"fake");
+            findMaxLengthOfMovements(tempAnimal.move().length());
             String homotaxy = tempAnimal.getClass().getSuperclass().getSimpleName();
             //update the value
-            animalCategories.get(homotaxy).add(animal);
+            this.animalCategories.get(homotaxy).add(animal);
         }
 
     }
@@ -145,4 +151,13 @@ public class ClassesController {
         System.out.println(this.animalCategories);
     }
 
+    private void findMaxLengthOfMovements(int movementLength){
+        if(this.maxLengthOfMovementsString>movementLength){
+            this.maxLengthOfMovementsString=movementLength;
+        }
+    }
+
+    public int getMaxLengthOfMovementsString() {
+        return maxLengthOfMovementsString;
+    }
 }

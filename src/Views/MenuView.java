@@ -1,6 +1,5 @@
 package Views;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -12,7 +11,7 @@ public class MenuView {
             {
                     "1. View all animals",
                     "2. Add a new animal",
-                    "3. Search by nickname",
+                    "3. Search by animal name",
                     "4. Search by id",
                     "5. Delete by id",
                     "6. Feed all animals",
@@ -60,7 +59,7 @@ public class MenuView {
         return animalCategories.get(category);
     }
 
-    public static void renderAnimalsByCategoryMenu(ArrayList<String> animals){
+    public static void renderAnimalsMenu(ArrayList<String> animals){
         System.out.println("Please choose one of the following animals!");
         int index = 1;
         for (String animal : animals){
@@ -68,6 +67,8 @@ public class MenuView {
             index++;
         }
     }
+
+
 
 
 }

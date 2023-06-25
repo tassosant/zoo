@@ -5,13 +5,14 @@ import InterfacesAndEnums.Homotaxy;
 public class Sparrow extends Bird{
 
     public Sparrow(String nickname){
-        super(0.03,3, Homotaxy.Birds, nickname);
+        super(0.03,3,  nickname);
     }
 
     @Override
-    public void move() {
-        fly();
-        walk();
+    public String move() {
+        return super.move(fly(),walk());
+//        fly();
+//        walk();
     }
 
 

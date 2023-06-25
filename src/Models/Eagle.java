@@ -6,13 +6,14 @@ public class Eagle extends Bird {
 
 
     public Eagle(String nickname) {
-        super(5.0, 25, Homotaxy.Birds, nickname);
+        super(5.0, 25,  nickname);
     }
 
-    @Override
-    public void move() {
-        walk();
-        fly();
+
+    public String move() {
+        return super.move(walk(),fly());
+//        walk();
+//        fly();
     }
 
 

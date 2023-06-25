@@ -5,14 +5,15 @@ import InterfacesAndEnums.Homotaxy;
 public class Frog extends Amphibian{
 
     public Frog(String nickname){
-        super(0.043,8, Homotaxy.Amphibians, nickname);
+        super(0.043,8,  nickname);
     }
 
-    @Override
-    public void move() {
-        jump();
-        swim();
-        walk();
+
+    public String move() {
+        return super.move(jump(),swim(),walk());
+//        jump();
+//        swim();
+//        walk();
     }
 
 

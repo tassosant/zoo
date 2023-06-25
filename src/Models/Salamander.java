@@ -4,13 +4,14 @@ import InterfacesAndEnums.Homotaxy;
 
 public class Salamander extends Amphibian  {
     public Salamander(String nickname){
-        super(65.0,10, Homotaxy.Amphibians, nickname);
+        super(65.0,10,  nickname);
     }
-    @Override
-    public void move() {
-        crawl();
-        swim();
-        run();
+
+    public String move() {
+        return super.move(crawl(),swim(),run());
+//        crawl();
+//        swim();
+//        run();
     }
 
 //    @Override

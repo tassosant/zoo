@@ -6,13 +6,14 @@ public class Whale extends Mammal{
 
 
     public Whale(String nickname){
-        super(10000.0,80, Homotaxy.Mammals, nickname);
+        super(10000.0,80,  nickname);
     }
 
     @Override
-    public void move() {
-        swim();
-        dive();
+    public String move() {
+        return super.move(swim(),dive());
+//        swim();
+//        dive();
     }
 
 

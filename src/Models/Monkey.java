@@ -4,13 +4,14 @@ import InterfacesAndEnums.Homotaxy;
 
 public class Monkey extends Mammal {
     public Monkey(String nickname){
-        super(6.5,30, Homotaxy.Mammals, nickname);
+        super(6.5,30,  nickname);
     }
-    @Override
-    public void move() {
-        walk();
-        run();
-        jump();
+
+    public String move() {
+        return super.move(walk(),run(),jump());
+//        walk();
+//        run();
+//        jump();
     }
 
 //    @Override

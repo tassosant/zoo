@@ -31,7 +31,8 @@ public class Main {
         ZooController zooController = new ZooController();
         zooController.handleMenu();
 
-
+//    Animal ape = new Ape("tasos");
+//    System.out.println(ape.move());
 
 
 
